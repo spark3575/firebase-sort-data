@@ -32,10 +32,10 @@ class sortVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                         let message = Message(msgId: snap.key, msgData: postDict)
                         
                         // first post listed first
-                        self.msgs.append(message)
+                        //self.msgs.append(message)
                         
                         // last post inserted to begining of array
-                        //self.msgs.insert(message, at: 0)
+                        self.msgs.insert(message, at: 0)
                     }
                 }
             }
