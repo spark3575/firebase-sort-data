@@ -26,16 +26,16 @@ class sortVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             self.msgs = []
             
-            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
                 for snap in snapshot {
                     if let postDict = snap.value as? [String: AnyObject] {
                         let message = Message(msgId: snap.key, msgData: postDict)
                         
                         // first post listed first
-                        //self.msgs.append(message)
+                        self.msgs.append(message)
                         
                         // last post inserted to begining of array
-                        self.msgs.insert(message, at: 0)
+                        // self.msgs.insert(message, at: 0)
                     }
                 }
             }
@@ -53,10 +53,10 @@ class sortVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let msg = msgs[indexPath.row]
+        // let msg = msgs[indexPath.row]
         
         // reversing order of array
-        //let msg = msgs.reversed()[indexPath.row]
+        let msg = msgs.reversed()[indexPath.row]
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell") as? MessageCell {
             cell.configureCell(msg: msg)
@@ -70,7 +70,7 @@ class sortVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         if let msgText = msgField.text , !msgText.isEmpty {
             let msg = [
                 "text": msgText,
-                "postedDate": FIRServerValue.timestamp()
+                "postedDate": ServerValue.timestamp()
                 ] as [String : Any]
             
             let fireMsg = DataService.ds.MSGS_DB_REF.childByAutoId()

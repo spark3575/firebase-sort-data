@@ -77,6 +77,7 @@
 		B03F90561E885477005FF6FF /* firebase-sort-data */ = {
 			isa = PBXGroup;
 			children = (
+				B03F905B1E885477005FF6FF /* Main.storyboard */,
 				B03F906D1E8854AB005FF6FF /* Model */,
 				B03F906C1E8854A4005FF6FF /* View */,
 				B03F906B1E88549B005FF6FF /* Controller */,
@@ -89,6 +90,8 @@
 		B03F90691E885488005FF6FF /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				B03F90631E885477005FF6FF /* Info.plist */,
+				B03F90761E885B32005FF6FF /* GoogleService-Info.plist */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -97,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				B03F905E1E885477005FF6FF /* Assets.xcassets */,
+				B03F90601E885477005FF6FF /* LaunchScreen.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -106,8 +110,6 @@
 			children = (
 				B03F90571E885477005FF6FF /* AppDelegate.swift */,
 				B03F90591E885477005FF6FF /* sortVC.swift */,
-				B03F90631E885477005FF6FF /* Info.plist */,
-				B03F90761E885B32005FF6FF /* GoogleService-Info.plist */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -115,8 +117,6 @@
 		B03F906C1E8854A4005FF6FF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B03F905B1E885477005FF6FF /* Main.storyboard */,
-				B03F90601E885477005FF6FF /* LaunchScreen.storyboard */,
 				B03F90721E885833005FF6FF /* MessageCell.swift */,
 			);
 			name = View;
